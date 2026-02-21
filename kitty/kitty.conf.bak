@@ -1,0 +1,73 @@
+# Font
+font_family JetBrainsMono Nerd Font
+bold_italic_font auto
+font_size        9.0
+
+# Window
+window_padding_width 14
+hide_window_decorations yes
+confirm_os_window_close 0
+
+# Keybindings
+map ctrl+insert copy_to_clipboard
+map shift+insert paste_from_clipboard
+
+# Allow remote access
+allow_remote_control yes
+
+# Aesthetics
+cursor_shape block
+cursor_blink_interval 0
+shell_integration no-cursor
+enable_audio_bell no
+
+# Minimal Tab bar styling
+tab_bar_edge                bottom
+tab_bar_style               powerline
+tab_powerline_style         slanted
+tab_title_template          {title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}
+
+# Colors
+cursor                  #eaeaea
+foreground              #bebebe
+background              #121212
+selection_foreground    #bebebe
+selection_background    #333333
+
+# Tab bar colors (accent)
+active_tab_foreground   #121212
+active_tab_background   #e68e0d
+inactive_tab_foreground #bebebe
+inactive_tab_background #333333
+
+# Black
+color0  #333333
+color8  #8a8a8d
+
+# Red
+color1  #D35F5F
+color9  #B91C1C
+
+# Green (yellow tones)
+color2  #FFC107
+color10 #FFC107
+
+# Yellow (red tones)
+color3  #b91c1c
+color11 #b90a0a
+
+# Blue (orange tones)
+color4  #e68e0d
+color12 #f59e0b
+
+# Magenta
+color5  #D35F5F
+color13 #B91C1C
+
+# Cyan
+color6  #bebebe
+color14 #eaeaea
+
+# White
+color7  #bebebe
+color15 #ffffff

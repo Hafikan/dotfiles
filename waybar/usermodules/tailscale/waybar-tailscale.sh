@@ -24,15 +24,15 @@ fi
 # Duruma göre icon + class
 case "$backend_state" in
     "Running")
-        echo "{\"text\": \"󰖂 $ips\"}"
+        echo "{\"text\": \"󱇱 $ips\"}"
         ;;
     "NeedsLogin")
-        echo "{\"text\": \"󰖂 ⛔ Not Logged In\"}"
+        echo "{\"text\": \"󱇱 ⛔ Not Logged In\"}"
         ;;
     "Stopped")
-        echo "{\"text\": \"󰖂 ● Stopped\"}"
+        echo "{\"text\": \"󱇱 ● Stopped\"}"
         ;;
     *)
-        echo "{\"text\": \"󰖂 …\", \"tooltip\": \"State: $backend_state\", \"class\": \"unknown\"}"
+        echo "{\"text\": \"󱇱 …\", \"tooltip\": \"State: $backend_state\", \"class\": \"unknown\"}"
         ;;
 esac

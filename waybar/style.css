@@ -1,14 +1,20 @@
-@import "../omarchy/current/theme/waybar.css";
+
+@define-color bg #1a1a1a;
+@define-color bg-light #2a2a2a;
+@define-color bg-lighter #333333;
+@define-color fg #c8c8c8;
+@define-color fg-dim #888888;
+@define-color accent #a0a0a0;
 
 * {
-  background-color: @background;
-  color: @foreground;
+  background-color: @bg;
+  color: @fg;
 
   border: none;
   border-radius: 0;
   min-height: 0;
   font-family: 'Hack Nerd Font Mono';
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .modules-left {
@@ -21,13 +27,61 @@
 
 #workspaces button {
   all: initial;
+  color: @fg-dim;
   padding: 0 6px;
   margin: 0 1.5px;
   min-width: 9px;
 }
 
+#workspaces button.focused {
+  color: @fg;
+}
+
 #workspaces button.empty {
   opacity: 0.5;
+}
+
+#cpu {
+  color: #b0b0b0;
+}
+
+#memory {
+  color: #9a9a9a;
+}
+
+#disk {
+  color: #8a8a8a;
+}
+
+#battery {
+  color: #b8b8b8;
+}
+#backlight {
+  color: #9a9a9a;
+}
+
+#battery.warning {
+  color: #d4a056;
+}
+
+#battery.critical {
+  color: #c45050;
+}
+
+#pulseaudio {
+  color: #a8a8a8;
+}
+
+#network {
+  color: #9e9e9e;
+}
+
+#bluetooth {
+  color: #8e8e8e;
+}
+
+#custom-tailscale {
+  color: #7e7e7e;
 }
 
 #cpu,
@@ -35,25 +89,27 @@
 #disk,
 #battery,
 #pulseaudio,
-#custom-omarchy,
-#custom-screenrecording-indicator,
-#custom-update,
-#custom-tailscale,
-#custom-music {
+#custom-music,
+#custom-seperator {
   min-width: 12px;
-  margin: 0 7.5px;
+  margin: 0 4.5px;
+}
+
+#custom-seperator {
+  color: @bg-lighter;
+}
+
+#mode {
+  background-color: #900000;
+  padding: 0 8px;
+}
+
+#window {
+  opacity: 0.8;
 }
 
 #tray {
   margin-right: 16px;
-}
-
-#bluetooth {
-  margin-right: 17px;
-}
-
-#network {
-  margin-right: 13px;
 }
 
 #custom-expand-icon {
@@ -61,27 +117,12 @@
 }
 
 tooltip {
+  background-color: @bg-light;
+  color: @fg;
   padding: 2px;
 }
 
-#custom-update {
-  font-size: 10px;
-}
-
-#clock {
-  margin-left: 8.75px;
-}
 
 .hidden {
   opacity: 0;
-}
-
-#custom-screenrecording-indicator {
-  min-width: 12px;
-  margin-left: 8.75px;
-  font-size: 10px;
-}
-
-#custom-screenrecording-indicator.active {
-  color: #a55555;
 }

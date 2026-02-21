@@ -1,0 +1,193 @@
+{
+    "reload_style_on_change": true,
+    "output": ["*"],
+    "layer": "top",
+    "position": "top",
+    "height": 28,
+    "spacing": 8,
+    "mode": "dock",
+    "fixed-center": true,
+
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode",
+        "custom/seperator",
+        "cpu",
+        "custom/seperator",
+        "disk",
+        "custom/seperator",
+        "memory"
+    ],
+    "modules-center": ["clock"],
+    "modules-right": [
+        
+        "custom/tailscale",
+        "custom/seperator",
+        "bluetooth",
+        "custom/seperator",
+        "network",
+        "custom/seperator",
+        "backlight",
+        "custom/seperator",
+        "pulseaudio",
+        "custom/seperator",
+        "battery"
+
+    ],
+
+    "sway/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "focused": ""
+        }
+    },
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+
+    "sway/window": {
+        "max-length": 50
+    },
+
+    "clock": {
+        "format": "<span font_size='13pt'></span> {:%H:%M:%S %A}",
+        "format-alt": "{:L%d %B W%V %Y}",
+        "tooltip": true,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 1
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "<span font_size='13pt'>󰘚</span> {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+        "on-click": "kitty --class floating-term -e btop",
+        "format-icons": [
+            "<span color='#b0b0b0'>▁</span>",
+            "<span color='#9a9a9a'>▂</span>",
+            "<span color='#8a8a8a'>▃</span>",
+            "<span color='#a8a8a8'>▄</span>",
+            "<span color='#b8b8b8'>▅</span>",
+            "<span color='#ffffa5'>▆</span>",
+            "<span color='#ff9977'>▇</span>",
+            "<span color='#dd532e'>█</span>"
+        ]
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "<span font_size='13pt'></span> {used:0.1f}G/{total:0.1f}G"
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "<span font_size='13pt'>󰆼</span> {specific_free:0.2f}/{specific_total:0.2f}",
+        "unit": "GB",
+        "path": "/"
+    },
+
+    "network": {
+        "format-icons": ["<span font_size='13pt'>󰤯</span>", "<span font_size='13pt'>󰤟</span>", "<span font_size='13pt'>󰤢</span>", "<span font_size='13pt'>󰤥</span>", "<span font_size='13pt'>󰤨</span>"],
+        "format": "{icon} {ifname}",
+        "format-wifi": "{icon} {ipaddr}",
+        "format-ethernet": "<span font_size='13pt'>󰀂</span> {ipaddr}",
+        "format-disconnected": "<span font_size='13pt'>󰤮</span> Disconnected",
+        "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "tooltip-format-ethernet": "{ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 3,
+        "on-click": "nm-connection-editor"
+    },
+
+    "pulseaudio": {
+        "format": "<span font_size='13pt'>{icon}</span> {volume}%",
+        "format-muted": "<span font_size='13pt'></span> muted",
+        "format-icons": {
+        "headphones": "",
+        "handsfree": "",
+        "headset": "",
+        "default": [
+            "",
+            ""
+        ]
+        },
+        "on-click": "kitty --class floating-term -e wiremix",
+        "on-click-right": "pamixer -t",
+        "scroll-step": 5,
+        "tooltip-format": "Playing at {volume}%"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "<span font_size='13pt'>{icon}</span> {capacity}%",
+        "format-discharging": "<span font_size='13pt'>{icon}</span> {capacity}%",
+        "format-charging": "<span font_size='13pt'>{icon}</span> {capacity}%",
+        "format-plugged": "<span font_size='13pt'></span> {capacity}%",
+        "format-full": "<span font_size='13pt'>󰂅</span> {capacity}%",
+        "format-icons": {
+            "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+            "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        },
+        "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+        "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+        "interval": 5
+    },
+
+    "group/tray-expander": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 600,
+            "children-class": "tray-group-item"
+        },
+        "modules": ["custom/expand-icon", "tray", "custom/tailscale", "bluetooth"]
+    },
+
+    "custom/expand-icon": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 12,
+        "spacing": 17
+    },
+
+    "bluetooth": {
+        "format": "<span font_size='13pt'></span>",
+        "format-disabled": "<span font_size='13pt'>󰂲</span>",
+        "format-connected": "<span font_size='13pt'>󰂱</span>",
+        "format-no-controller": "",
+        "tooltip-format": "Devices connected: {num_connections}\n{device_alias}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_battery_percentage}%",
+        "on-click": "overskride"
+    },
+
+    "custom/seperator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+    },
+
+    "custom/tailscale": {
+        "exec": "~/.config/waybar/usermodules/tailscale/waybar-tailscale.sh --status",
+        "return-type": "json",
+        "interval": 3
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟"]
+    }
+    
+}
