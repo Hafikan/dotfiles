@@ -1,7 +1,8 @@
 
+#!/usr/bin/env bash
 
 dir="$HOME/.config/rofi/"
-theme='cerb'
+theme='samurai'
 
 ## Run
 rofi \
