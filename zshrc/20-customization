@@ -1,0 +1,8 @@
+# ------------------------------------------
+# oh-my-zsh plugins 
+#-------------------------------------------
+plugins=(
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    kitty
+)

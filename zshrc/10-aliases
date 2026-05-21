@@ -1,0 +1,10 @@
+# ------------------------------------------
+# General 
+#-------------------------------------------
+
+alias ..='cd ..'
+alias ls='eza -a --icons --hyperlink'
+alias ll='eza -la --icons --hyperlink'
+alias lt='eza --tree -a --hyperlink --icons'
+
+
