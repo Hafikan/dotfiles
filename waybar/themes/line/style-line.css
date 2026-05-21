@@ -3,7 +3,7 @@
 
 * {
     font-size:15px;
-    font-family: "SpaceMono Nerd Font Propo";
+    font-family: "CodeNewRoman Nerd Font Propo";
 }
 window#waybar{
     border-radius:10px;
@@ -14,7 +14,7 @@ tooltip {
     background:@background;
     color: @color7;
 }
-#clock:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover,#disk:hover,#backlight:hover,#pulseaudio:hover,#custom-tailscale:hover,#custom-docker:hover{
+#clock:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
     transition: all .3s ease;
     color:@color9;
 }
@@ -71,19 +71,19 @@ tooltip {
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
 #bluetooth{
-    padding: 0px 8px;
+    padding: 0px 5px;
     transition: all .3s ease;
     color:@color7;
 
 }
 #network{
-    padding: 0px 8px;
+    padding: 0px 5px;
     transition: all .3s ease;
     color:@color7;
 
 }
 #battery{
-    padding: 0px 12px 0px 8px;
+    padding: 0px 10px 0 5;
     transition: all .3s ease;
     color:@color7;
 
@@ -122,9 +122,9 @@ tooltip {
 #custom-colorpicker{
     padding: 0px 5px;
 }
-#cpu,#memory,#temperature,#disk,#backlight,#pulseaudio,#custom-tailscale,#custom-docker{
-    padding: 0px 8px;
-    transition: all .3s ease;
+#cpu,#memory,#temperature{
+    padding: 0px 5px;
+    transition: all .3s ease; 
     color:@color7;
 
 }

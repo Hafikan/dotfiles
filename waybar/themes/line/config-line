@@ -6,7 +6,7 @@
         "margin-top": 7,
         "margin-bottom": 0,
         "reload_style_on_change": true,
-        "modules-left": ["hyprland/workspaces","cpu","memory","disk","custom/docker"],
+        "modules-left": ["hyprland/workspaces","cpu","memory","disk"],
         "modules-center": ["clock"],
         "modules-right": [  "custom/tailscale","backlight","pulseaudio","bluetooth","network","battery","custom/notification"],
 
@@ -29,28 +29,17 @@
             "escape": true
         },
         "clock": {
-            "format": "{:%H:%M:%S}",
-            "interval": 1,
-            "locale": "en_GB.UTF-8",
-            "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+            "format": "{:%I:%M:%S %p} ",
+            "interval": 1,   
+            "tooltip-format": "<tt>{calendar}</tt>",
             "calendar": {
-                "mode": "month",
-                "mode-mon-col": 3,
-                "weeks-pos": "right",
-                "on-scroll": 1,
                 "format": {
-                    "months":   "<span color='#ef9999'><b>{}</b></span>",
-                    "weekdays": "<span color='#a76b6b'><b>{}</b></span>",
-                    "weeks":    "<span color='#606067'><i>W{}</i></span>",
-                    "days":     "<span color='#cccccc'>{}</span>",
-                    "today":    "<span color='#ffffff' background='#6C494C'><b>{}</b></span>"
+                    "today": "<span color='#fAfBfC'><b>{}</b></span>"
                 }
             },
             "actions": {
                 "on-click-right": "shift_down",
-                "on-click": "shift_up",
-                "on-scroll-up": "shift_up",
-                "on-scroll-down": "shift_down"
+                "on-click": "shift_up"
             }
         },
         
@@ -88,13 +77,6 @@
             "format": "<span font_size='13pt'></span> {specific_free:0.2f}/{specific_total:0.2f}",
             "unit": "GB",
             "path": "/"
-        },
-        "custom/docker": {
-            "interval": 5,
-            "format": "<span font_size='13pt'>󰡨</span> {}",
-            "exec": "if docker info >/dev/null 2>&1; then echo \"$(docker ps -q | wc -l)/$(docker ps -aq | wc -l)\"; else echo off; fi",
-            "tooltip": false,
-            "on-click": "kitty --class floating-term -e sh -c 'docker ps; echo; read -p \"Press enter to close...\"'"
         },
         "network": {
         "format-icons": ["<span font_size='13pt'>󰤯</span>", "<span font_size='13pt'>󰤟</span>", "<span font_size='13pt'>󰤢</span>", "<span font_size='13pt'>󰤥</span>", "<span font_size='13pt'>󰤨</span>"],
